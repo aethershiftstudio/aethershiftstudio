@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOIDFORGE • Indie Games</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=VT323&amp;display=swap');
+        
+        :root {
+            --pixel: #00ff9d;
+            --bg: #0a0a0a;
+            --accent: #ff00aa;
+        }
+        
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: var(--bg);
+            color: var(--pixel);
+            font-family: 'VT323', monospace;
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+        
+        .scanlines {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent 0px,
+                rgba(0, 255, 150, 0.03) 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 9999;
+        }
+        
+        header {
+            background: linear-gradient(#111, #000);
+            border-bottom: 4px solid var(--pixel);
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 28px;
+            color: var(--pixel);
+            text-shadow: 0 0 10px var(--pixel),
+                         4px 4px 0 #ff00aa;
+            letter-spacing: 4px;
+        }
+        
+        .tagline {
+            font-size: 18px;
+            color: #ff00aa;
+            animation: glitch 1s infinite alternate;
+        }
+        
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+        
+        nav a {
+            color: var(--pixel);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 20px;
+            transition: all 0.2s;
+        }
+        
+        nav a:hover {
+            color: #fff;
+            text-shadow: 0 0 15px var(--pixel);
+            transform: scale(1.1);
+        }
+        
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10,10,10,0.7), rgba(10,10,10,0.9)), 
+                        url('https://picsum.photos/id/1015/1920/1080') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-bottom: 8px solid var(--accent);
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 40px;
+            border: 6px solid var(--pixel);
+            background: rgba(0,0,0,0.85);
+        }
+        
+        .hero h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 52px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 6px 6px 0 #ff00aa;
+        }
+        
+        .hero p {
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #ccc;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #000;
+            color: var(--pixel);
+            border: 4px solid var(--pixel);
+            padding: 20px 50px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 24px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px var(--pixel);
+        }
+        
+        .btn:hover {
+            background: var(--pixel);
+            color: #000;
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 0 40px var(--accent);
+        }
+        
+        section {
+            padding: 80px 40px;
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .game-card {
+            border: 4px solid var(--pixel);
+            background: #111;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .game-card:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+        
+        .game-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--accent);
+        }
+        
+        .game-info {
+            padding: 20px;
+        }
+        
+        .game-info h3 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .coming-soon {
+            color: var(--accent);
+            font-size: 18px;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        
+        footer {
+            background: #000;
+            border-top: 4px solid var(--pixel);
+            padding: 60px 40px;
+            text-align: center;
+            font-size: 18px;
+        }
+        
+        .crt {
+            position: relative;
+        }
+        
+        .crt::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(transparent 50%, rgba(0,255,150,0.1) 50%);
+            background-size: 100% 4px;
+            pointer-events: none;
+            animation: crt-flicker 0.15s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="scanlines"></div>
+    
+    <header>
+        <div class="logo">VOIDFORGE</div>
+        <nav>
+            <a href="#">GAMES</a>
+            <a href="#">STUDIO</a>
+            <a href="#">NEWS</a>
+            <a href="#">JOIN US</a>
+        </nav>
+    </header>
+    
+    <section class="hero crt">
+        <div class="hero-content">
+            <h1>WE MAKE<br>WEIRD GAMES</h1>
+            <p>One indie dev + caffeine.<br>Building strange worlds since 2025.</p>
+            <a href="#" class="btn">PLAY OUR DEMO →</a>
+        </div>
+    </section>
+    
+    <section style="background:#111; text-align:center;">
+        <h2 style="font-family:'Press Start 2P'; font-size:36px; margin-bottom:60px;">LATEST BUILDS</h2>
+        
+        <div class="games-grid">
+            <!-- Game 1 -->
+            <div class="game-card">
+                <img src="https://picsum.photos/id/1015/600/300" alt="NEON DRIFT">
+                <div class="game-info">
+                    <h3>NEON DRIFT</h3>
+                    <p>Retro-futuristic endless racer with synthwave beats and procedural cities.</p>
+                    <span class="coming-soon">STEAM • OUT NOW</span>
+                </div>
+            </div>
+            
+            <!-- Game 2 -->
+            <div class="game-card">
+                <img src="https://picsum.photos/id/201/600/300" alt="VOID CRAWLER">
+                <div class="game-info">
+                    <h3>VOID CRAWLER</h3>
+                    <p>Roguelike deckbuilder set in a living black hole. Cards mutate in real time.</p>
+                    <span class="coming-soon">DEMO AVAILABLE</span>
+                </div>
+            </div>
+            
+            <!-- Game 3 -->
+            <div class="game-card">
+                <img src="https://picsum.photos/id/870/600/300" alt="MOTHBOY">
+                <div class="game-info">
+                    <h3>MOTHBOY</h3>
+                    <p>Cozy 2.5D platformer about a moth who just wants to reach the moon.</p>
+                    <span class="coming-soon">2026 • Wishlist on Steam</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section style="background:linear-gradient(#0a0a0a, #1a0033); text-align:center;">
+        <h2 style="font-family:'Press Start 2P'; font-size:36px; margin-bottom:40px;">WHO WE ARE</h2>
+        <p style="max-width:700px; margin:0 auto; font-size:26px;">
+            A tiny startup of 3 passionate weirdos making the games we always wanted to play.<br>
+            No shareholders. No focus tests. Just pure pixel passion.
+        </p>
+        
+        <div style="margin-top:80px; display:flex; justify-content:center; gap:60px; flex-wrap:wrap;">
+            <div style="text-align:center;">
+                <div style="font-size:80px; line-height:1;">3</div>
+                <div style="font-size:22px;">Founders</div>
+            </div>
+            <div style="text-align:center;">
+                <div style="font-size:80px; line-height:1;">∞</div>
+                <div style="font-size:22px;">Ideas</div>
+            </div>
+            <div style="text-align:center;">
+                <div style="font-size:80px; line-height:1;">1</div>
+                <div style="font-size:22px;">Coffee Machine</div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© VOIDFORGE GAMES 2026 • MADE IN A BASEMENT • <a href="#" style="color:#ff00aa;">DISCORD</a> • <a href="#" style="color:#ff00aa;">TWITTER</a> • <a href="#" style="color:#ff00aa;">STEAM</a></p>
+        <p style="margin-top:30px; font-size:16px; opacity:0.6;">"Small team. Big dreams. Zero chill."</p>
+    </footer>
+    
+    <script>
+        // Simple retro click sound effect (optional)
+        document.querySelectorAll('.btn, nav a').forEach(el => {
+            el.addEventListener('click', () => {
+                console.log('%c▶ RETRO CLICK', 'color:#00ff9d; font-family:monospace');
+            });
+        });
+    </script>
+</body>
+</html>
