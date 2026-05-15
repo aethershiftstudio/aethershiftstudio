@@ -431,16 +431,9 @@
   .game-thumb-bg {
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
     position: relative;
+    background: #0a0f1e;
   }
-
-  .game-thumb-bg.g1 { background: linear-gradient(135deg, #0a1628 0%, #1a0a2e 50%, #0a2010 100%); }
-  .game-thumb-bg.g2 { background: linear-gradient(135deg, #1a0a0a 0%, #2e1a0a 50%, #0a1a2e 100%); }
-  .game-thumb-bg.g3 { background: linear-gradient(135deg, #0a1a1a 0%, #0a0a2e 50%, #1a2e0a 100%); }
 
   .game-thumb-overlay {
     position: absolute;
@@ -901,7 +894,7 @@
   <div class="hero-content">
     <div class="hero-eyebrow">Indie Game Studio · Est. 2026</div>
     <h1 class="hero-title">
-      <span class="shift">AetherShift Studio</span>
+      <span class="shift">AetherShift</span>
       <span class="worlds">Redefining Worlds</span>
     </h1>
     <p class="hero-sub">
@@ -926,14 +919,14 @@
   <div class="ticker-inner">
     <span class="ticker-item">Aethershift Studios <span class="ticker-sep">◆</span></span>
     <span class="ticker-item">Currently Developing 3 Titles <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Nightfall Protocol — In Development <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Void Rift — Coming 2025 <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Indie · Ambitious · Uncompromising <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Nightforge RP — In Development <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Aethershift Wasteland — Coming 2026 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Classified — Coming 2026 <span class="ticker-sep">◆</span></span>
     <span class="ticker-item">Aethershift Studios <span class="ticker-sep">◆</span></span>
     <span class="ticker-item">Currently Developing 3 Titles <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Nightfall Protocol — In Development <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Void Rift — Coming 2025 <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Indie · Ambitious · Uncompromising <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Nightforge RP — In Development <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Aethershift Wasteland — Coming 2026 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Classified — Coming 2026 <span class="ticker-sep">◆</span></span>
   </div>
 </div>
 
@@ -967,26 +960,19 @@
     <!-- Game 1 -->
     <div class="game-card reveal">
       <div class="game-thumb">
-        <div class="game-thumb-bg g1">
-          <svg width="90" height="90" viewBox="0 0 90 90" fill="none">
-            <polygon points="45,5 85,30 85,65 45,85 5,65 5,30" fill="none" stroke="rgba(0,240,200,0.4)" stroke-width="1.5"/>
-            <polygon points="45,20 70,35 70,58 45,70 20,58 20,35" fill="rgba(0,240,200,0.06)" stroke="rgba(0,240,200,0.25)" stroke-width="1"/>
-            <circle cx="45" cy="45" r="12" fill="none" stroke="#00f0c8" stroke-width="1.5"/>
-            <circle cx="45" cy="45" r="5" fill="#00f0c8" opacity="0.8"/>
-            <line x1="45" y1="33" x2="45" y2="20" stroke="#00f0c8" stroke-width="0.75" opacity="0.5"/>
-            <line x1="45" y1="57" x2="45" y2="70" stroke="#00f0c8" stroke-width="0.75" opacity="0.5"/>
-          </svg>
+        <div class="game-thumb-bg">
+          <img src="Images/Game Logos/nightforge_logo_no_bg.png" alt="Nightforge RP" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;">
         </div>
         <div class="game-thumb-overlay"></div>
-        <div class="game-tag live">Live Alpha</div>
+        <div class="game-tag dev">In Development</div>
       </div>
       <div class="game-info">
-        <h3 class="game-title">Nightfall Protocol</h3>
-        <p class="game-desc">A tactical rogue-like where time fractures on death. Navigate corrupted server layers and unravel a conspiracy that spans three timelines.</p>
+        <h3 class="game-title">Nightforge RP</h3>
+        <p class="game-desc">A FiveM server .</p>
         <div class="game-genres">
-          <span class="genre-pill">Rogue-like</span>
-          <span class="genre-pill">Sci-fi</span>
-          <span class="genre-pill">Tactical</span>
+          <span class="genre-pill">RolePlay</span>
+          <span class="genre-pill">Lice Simulation</span>
+          <span class="genre-pill">Open-World</span>
         </div>
       </div>
     </div>
@@ -994,20 +980,15 @@
     <!-- Game 2 -->
     <div class="game-card reveal reveal-delay-1">
       <div class="game-thumb">
-        <div class="game-thumb-bg g2">
-          <svg width="90" height="90" viewBox="0 0 90 90" fill="none">
-            <rect x="15" y="15" width="60" height="60" fill="none" stroke="rgba(255,62,108,0.35)" stroke-width="1.5" transform="rotate(15 45 45)"/>
-            <rect x="22" y="22" width="46" height="46" fill="rgba(255,62,108,0.05)" stroke="rgba(255,62,108,0.2)" stroke-width="1" transform="rotate(15 45 45)"/>
-            <circle cx="45" cy="45" r="14" fill="none" stroke="#ff3e6c" stroke-width="1.5"/>
-            <path d="M45 31 L51 42 L45 38 L39 42 Z" fill="#ff3e6c" opacity="0.9"/>
-          </svg>
+        <div class="game-thumb-bg">
+          <img src="Images/Game Logos/Aethershift Wasteland.jpg" alt="Aethershift Wasteland" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;">
         </div>
         <div class="game-thumb-overlay"></div>
-        <div class="game-tag upcoming">Coming 2025</div>
+        <div class="game-tag upcoming">Coming 2026</div>
       </div>
       <div class="game-info">
-        <h3 class="game-title">Void Rift</h3>
-        <p class="game-desc">An open-world survival RPG set in a dimension where physics doesn't apply. Build, break, and bend reality to carve your story.</p>
+        <h3 class="game-title">Aethershift Wasteland</h3>
+        <p class="game-desc">A Rust server built for thoes that have a job.</p>
         <div class="game-genres">
           <span class="genre-pill">Open World</span>
           <span class="genre-pill">Survival</span>
@@ -1019,27 +1000,19 @@
     <!-- Game 3 -->
     <div class="game-card reveal reveal-delay-2">
       <div class="game-thumb">
-        <div class="game-thumb-bg g3">
-          <svg width="90" height="90" viewBox="0 0 90 90" fill="none">
-            <circle cx="45" cy="45" r="38" fill="none" stroke="rgba(240,165,0,0.3)" stroke-width="1.5"/>
-            <circle cx="45" cy="45" r="26" fill="rgba(240,165,0,0.05)" stroke="rgba(240,165,0,0.2)" stroke-width="1"/>
-            <circle cx="45" cy="45" r="12" fill="none" stroke="#f0a500" stroke-width="1.5"/>
-            <line x1="45" y1="7" x2="45" y2="19" stroke="#f0a500" stroke-width="0.75" opacity="0.5"/>
-            <line x1="78" y1="45" x2="66" y2="45" stroke="#f0a500" stroke-width="0.75" opacity="0.5"/>
-            <line x1="45" y1="83" x2="45" y2="71" stroke="#f0a500" stroke-width="0.75" opacity="0.5"/>
-            <line x1="12" y1="45" x2="24" y2="45" stroke="#f0a500" stroke-width="0.75" opacity="0.5"/>
-          </svg>
+        <div class="game-thumb-bg">
+          <img src="https://i.imgur.com/fTa7S07.png" alt="Sol Remnant" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;">
         </div>
         <div class="game-thumb-overlay"></div>
-        <div class="game-tag dev">In Dev</div>
+        <div class="game-tag upcoming">Coming 2026</div>
       </div>
       <div class="game-info">
-        <h3 class="game-title">Sol Remnant</h3>
-        <p class="game-desc">A narrative puzzle platformer where light is your weapon, your shield, and your greatest enemy. Uncover the last secrets of a dying star.</p>
+        <h3 class="game-title">Classified</h3>
+        <p class="game-desc">Classified</p>
         <div class="game-genres">
-          <span class="genre-pill">Puzzle</span>
-          <span class="genre-pill">Narrative</span>
-          <span class="genre-pill">Platformer</span>
+          <span class="genre-pill">Open World</span>
+          <span class="genre-pill">Survival</span>
+          <span class="genre-pill">RPG</span>
         </div>
       </div>
     </div>
@@ -1171,9 +1144,9 @@
     <div>
       <div class="footer-col-title">Games</div>
       <ul class="footer-links">
-        <li><a href="#">Nightfall Protocol</a></li>
-        <li><a href="#">Void Rift</a></li>
-        <li><a href="#">Sol Remnant</a></li>
+        <li><a href="#">Nightforge RP</a></li>
+        <li><a href="#">Aethershift Wasteland</a></li>
+        <li><a href="#">Classified</a></li>
         <li><a href="#">All Titles</a></li>
       </ul>
     </div>
@@ -1197,7 +1170,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2024 AetherShift Studios. All Rights Reserved.</div>
+    <div class="footer-copy">© 2026 AetherShift Studios. All Rights Reserved.</div>
     <div class="footer-legal">
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Service</a>
